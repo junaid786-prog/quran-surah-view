@@ -1,4 +1,4 @@
-package com.example.navigationdrawer;
+package com.example.holyquran;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.navigationdrawer;
+package com.example.holyquran;
 
 import java.util.List;
 
@@ -269,7 +269,8 @@ public class QDH {
             5,
             6
     };
-    public String[] englishParahName = {"Alif Lam Meem",
+    public String[] englishParahName = {
+            "Alif Lam Meem",
             "Sayaqool ",
             "Tilkal Rusull",
             "Lan Tana Loo",
@@ -300,7 +301,8 @@ public class QDH {
             "Tabarakallazi",
             "Amma Yatasa'aloon",
     };
-    public String[] ParahName = {"الم ",
+    public String[] ParahName = {
+            "الم ",
             "سیقول ",
             "تلک الرسل ",
             "لن تنالوالبر",
