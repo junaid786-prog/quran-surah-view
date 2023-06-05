@@ -14,12 +14,18 @@ public class SurahActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_surah);
 
-        int selectedSurahIndex = getIntent().getIntExtra("EXTRA_SURAH_INDEX", 1);
-        // QuranArabicText holyQuranText = new QuranArabicText();
-        // String surahDetails = holyQuranText.QuranArabicText[1];
+        String selectedSurahName = getIntent().getStringExtra("EXTRA_SURAH_NAME");
+        int start_index = getIntent().getIntExtra("EXTRA_SURAH_START_INDEX", 0);
+        int ayaCount = getIntent().getIntExtra("EXTRA_SURAH_AYAT_COUNT", 0);
+
+        QuranArabicText holyQuranText = new QuranArabicText();
+        String surahDetails = holyQuranText.QuranArabicText[0] + "\n\n";
+        for (int i = 0; i < ayaCount - 1; i++){
+            surahDetails += holyQuranText.QuranArabicText[i + start_index] + "\n";
+        }
 
         TextView surahDetailsView = findViewById(R.id.surah_details_text_view);
-        surahDetailsView.setText("Hello surah " + selectedSurahIndex);
-        setTitle("SURAH DETAILS");
+        surahDetailsView.setText(surahDetails);
+        setTitle("SURAH: " + selectedSurahName);
     }
 }

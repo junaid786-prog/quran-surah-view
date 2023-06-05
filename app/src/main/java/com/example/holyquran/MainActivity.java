@@ -32,9 +32,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        QDH holyQuran = new QDH();
         int selectedSurahIndex = position;
+        int surahAyaCount = holyQuran.surahAyatCount[selectedSurahIndex];
+        int surahStartIndex = holyQuran.SSP[position];
+
         Intent surahDetailIntent = new Intent(this, SurahActivity.class);
-        surahDetailIntent.putExtra("EXTRA_SURAH_INDEX", selectedSurahIndex);
+        surahDetailIntent.putExtra("EXTRA_SURAH_NAME", holyQuran.englishSurahNames[selectedSurahIndex]);
+        surahDetailIntent.putExtra("EXTRA_SURAH_START_INDEX", surahStartIndex);
+        surahDetailIntent.putExtra("EXTRA_SURAH_AYAT_COUNT", surahAyaCount);
         startActivity(surahDetailIntent);
     }
 }
