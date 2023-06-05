@@ -7,7 +7,7 @@
     tools:context=".SurahActivity">
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/search_aya_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -26,9 +26,9 @@
         android:background="#388E3C"
         android:backgroundTint="#388E3C"
         android:text="Search"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintEnd_toEndOf="@+id/search_aya_input"
+        app:layout_constraintStart_toStartOf="@+id/search_aya_input"
+        app:layout_constraintTop_toBottomOf="@+id/search_aya_input" />
 
     <ScrollView
         android:id="@+id/surah_detail_view"

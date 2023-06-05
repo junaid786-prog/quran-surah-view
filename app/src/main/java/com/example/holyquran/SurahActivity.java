@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -27,5 +29,22 @@ public class SurahActivity extends AppCompatActivity {
         TextView surahDetailsView = findViewById(R.id.surah_details_text_view);
         surahDetailsView.setText(surahDetails);
         setTitle("SURAH: " + selectedSurahName);
+
+        TextView searchInput = findViewById(R.id.search_aya_input);
+        searchInput.setHint("Enter Aya no from " + start_index + " to " + start_index + ayaCount);
+
+        Button searchAyaBtn = findViewById(R.id.search_ayat_btn);
+        searchAyaBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int ayaNo = Integer.parseInt(searchInput.getText().toString());
+                if (ayaNo < start_index || ayaNo > start_index + ayaCount)
+                    surahDetailsView.setText("Enter right no");
+                else {
+                    String ayaText = holyQuranText.QuranArabicText[ayaNo];
+                    surahDetailsView.setText(ayaText);
+                }
+            }
+        });
     }
 }
