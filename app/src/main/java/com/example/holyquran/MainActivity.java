@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         QDH holyQuran = new QDH();
         int selectedSurahIndex = position;
-
         int surahAyaCount = holyQuran.surahAyatCount[selectedSurahIndex];
         int surahStartIndex = holyQuran.SSP[position];
 
